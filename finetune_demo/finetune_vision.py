@@ -15,14 +15,17 @@ from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from peft import PeftConfig, get_peft_config, get_peft_model
 from rouge_chinese import Rouge
 from torch import nn
-from transformers import (
+from modelscope import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    EvalPrediction,
     GenerationConfig,
+)
+from transformers import (
+    EvalPrediction,
     PreTrainedTokenizer,
     Seq2SeqTrainingArguments,
 )
+
 from transformers import DataCollatorForSeq2Seq as _DataCollatorForSeq2Seq
 from transformers import Seq2SeqTrainer as _Seq2SeqTrainer
 from datasets import load_dataset, DatasetDict, NamedSplit
